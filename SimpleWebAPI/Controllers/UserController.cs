@@ -15,7 +15,7 @@ namespace SimpleWebAPI.Controllers
             _dbContext = dbContext;
         }
         /// <summary>
-        /// 
+        ///  Bitta o'zgartish 
         /// </summary>
         /// <returns></returns>
         [HttpGet]
