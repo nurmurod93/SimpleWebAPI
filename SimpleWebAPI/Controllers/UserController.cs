@@ -14,7 +14,10 @@ namespace SimpleWebAPI.Controllers
         {
             _dbContext = dbContext;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
         {
@@ -24,7 +27,11 @@ namespace SimpleWebAPI.Controllers
             }
             return await _dbContext.Users.ToListAsync();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -39,7 +46,11 @@ namespace SimpleWebAPI.Controllers
             }
             return user;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> CreateUser(User user)
         {
@@ -53,6 +64,13 @@ namespace SimpleWebAPI.Controllers
         {
             return _dbContext.Users.Any(u => u.Id == id);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, User user)
         {
@@ -78,6 +96,11 @@ namespace SimpleWebAPI.Controllers
             }
             return NoContent();
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete]
         public async Task<IActionResult> DeleteUser(int id)
         {
